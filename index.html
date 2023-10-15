@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FARBOD DevOps Agency</title>
+    <style>
+      @-moz-keyframes spin {
+        100% {
+          -moz-transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.5, 0.5);
+          opacity: 0.5;
+        }
+        to {
+          transform: scale(2.5, 2.5);
+          opacity: 0;
+        }
+      }
+      #container {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .circle {
+        border-radius: 50%;
+        background-color: deepskyblue;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        opacity: 0;
+        animation: scaleIn 4s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+      }
+
+      .item {
+        z-index: 100;
+        padding: 5px;
+        -webkit-animation: spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation: spin 4s linear infinite;
+      }
+
+      .item img {
+        width: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="outerContainer">
+      <div id="container">
+        <div class="item">
+          <img
+            src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg"
+          />
+        </div>
+        <div class="circle" style="animation-delay: 0s;"></div>
+        <div class="circle" style="animation-delay: 1s;"></div>
+        <div class="circle" style="animation-delay: 2s;"></div>
+        <div class="circle" style="animation-delay: 3s;"></div>
+      </div>
+    </div>
+  </body>
+</html>
